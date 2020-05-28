@@ -1,5 +1,5 @@
 name: Web Server
-version: 4
+version: 5
 formatVersion: 1
 inputs:
   Flavor:
@@ -31,6 +31,14 @@ resources:
       image: '${input.Image}'
       flavor: '${input.Flavor}'
       count: 3
+      constraints:
+        - tag: '${input.deployTarget}'
+  App_Server:
+    type: Cloud.Machine
+    properties:
+      image: '${input.Image}'
+      flavor: '${input.Flavor}'
+      count: 1
       constraints:
         - tag: '${input.deployTarget}'
   Db_Server:
