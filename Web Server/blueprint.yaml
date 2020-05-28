@@ -1,5 +1,5 @@
 name: Web Server
-version: 2
+version: 3
 formatVersion: 1
 inputs:
   Flavor:
@@ -30,6 +30,6 @@ resources:
     properties:
       image: '${input.Image}'
       flavor: '${input.Flavor}'
-      count: 2
+      count: 3
       constraints:
         - tag: '${input.deployTarget}'
