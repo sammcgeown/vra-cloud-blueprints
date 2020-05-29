@@ -1,4 +1,4 @@
-name: Web Server
+name: GitOps Demo
 version: 1
 formatVersion: 1
 inputs:
@@ -30,5 +30,6 @@ resources:
     properties:
       image: '${input.Image}'
       flavor: '${input.Flavor}'
+      count: 1
       constraints:
         - tag: '${input.deployTarget}'
