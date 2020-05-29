@@ -1,5 +1,5 @@
 name: GitOps Demo
-version: 1
+version: 2
 formatVersion: 1
 inputs:
   Flavor:
@@ -30,6 +30,6 @@ resources:
     properties:
       image: '${input.Image}'
       flavor: '${input.Flavor}'
-      count: 1
+      count: 2
       constraints:
         - tag: '${input.deployTarget}'
