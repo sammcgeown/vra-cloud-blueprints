@@ -1,12 +1,7 @@
 name: MEW Demo
 version: 1
 formatVersion: 1
-inputs:
-  Cluster Size:
-    type: number
-    default: '1'
-    minimum: 1
-    maximum: 3
+inputs: {}
 resources:
   Cloud_LoadBalancer_1:
     type: Cloud.LoadBalancer
@@ -22,11 +17,11 @@ resources:
   WebServer:
     type: Cloud.Machine
     properties:
-      count: '${input.Cluster Size}'
       image: ubuntu-xenial
       flavor: small
       networks:
         - network: '${resource.Cloud_Network_1.id}'
+      count: 3
   Cloud_Network_1:
     type: Cloud.Network
     properties:
